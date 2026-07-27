@@ -7,7 +7,7 @@
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
+            line-height: 1.5; 
             margin: 0; 
             padding: 0; 
             background: #f4f7f6; 
@@ -16,7 +16,7 @@
 
         header { 
             text-align: center; 
-            padding: 80px 20px; 
+            padding: 60px 20px; 
             background: linear-gradient(rgba(15, 32, 25, 0.75), rgba(15, 32, 25, 0.75)), 
                         url('https://images.unsplash.com/photo-1511497584788-876761c11969?auto=format&fit=crop&w=1600&q=80'); 
             background-size: cover;
@@ -26,132 +26,131 @@
 
         header h1 { 
             margin: 0 0 10px 0; 
-            font-size: 2.5em; 
+            font-size: 2.2em; 
             letter-spacing: 1px;
         }
 
         header .subtitle { 
-            font-size: 1.2em; 
+            font-size: 1.1em; 
             color: #52b788; 
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         header .bio {
             max-width: 650px;
             margin: 0 auto;
-            font-size: 0.95em;
+            font-size: 0.9em;
             color: #e0e0e0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .container { 
-            max-width: 750px; 
-            margin: 40px auto; 
+            max-width: 900px; 
+            margin: 30px auto; 
             padding: 0 20px; 
         }
 
         .section-title {
             border-bottom: 2px solid #52b788;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
             color: #1b4332;
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
 
-        /* --- TARJETA CON CONTENEDOR DE IMAGEN --- */
+        /* --- TARJETA COMPACTA Y ALARGADA --- */
         .card { 
             background: white; 
-            border-radius: 10px; 
+            border-radius: 8px; 
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06); 
             border: 1px solid #e0e0e0;
             display: flex;
             flex-direction: column;
-            margin-top: 25px;
+            margin-top: 18px;
         }
 
-        /* Disposición horizontal en pantallas medianas/grandes */
-        @media (min-width: 700px) {
+        @media (min-width: 600px) {
             .card {
                 flex-direction: row;
-            }
-            .card-img-container {
-                width: 35%;
-            }
-            .card-content {
-                width: 65%;
+                align-items: center;
             }
         }
 
         .card-img-container {
             width: 100%;
-            background-color: #eaedd0;
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
+            background-color: #f0f0f0;
+            flex-shrink: 0;
             overflow: hidden;
-            border-bottom: 1px solid #eee;
         }
 
-        @media (min-width: 700px) {
+        @media (min-width: 600px) {
             .card-img-container {
-                border-bottom: none;
+                width: 220px; /* Ancho fijo para la miniatura */
+                height: 180px; /* Altura compacta fija */
                 border-right: 1px solid #eee;
             }
         }
 
         .card-img {
             width: 100%;
-            height: 100%;
-            min-height: 200px;
+            height: 180px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         .card:hover .card-img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .card-content {
-            padding: 20px 25px;
+            padding: 15px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex-grow: 1;
         }
 
         .card h3 { 
-            margin-top: 0; 
+            margin: 0 0 6px 0; 
             color: #2d6a4f; 
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         .tags {
-            margin: 10px 0 15px 0;
+            margin: 4px 0 8px 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 5px;
         }
 
         .tag {
             background: #d8f3dc;
             color: #1b4332;
-            padding: 4px 9px;
+            padding: 2px 7px;
             border-radius: 4px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: bold;
+        }
+
+        .card p {
+            margin: 0 0 10px 0;
+            font-size: 0.88em;
+            color: #4a5568;
+            line-height: 1.4;
         }
 
         .btn { 
             display: inline-block; 
             background: #2d6a4f; 
             color: white; 
-            padding: 10px 18px; 
+            padding: 6px 14px; 
             text-decoration: none; 
-            border-radius: 5px; 
+            border-radius: 4px; 
             font-weight: bold; 
+            font-size: 0.85em;
             text-align: center;
             transition: background 0.3s;
-            margin-top: 15px;
             align-self: flex-start;
         }
 
@@ -162,15 +161,15 @@
         footer {
             text-align: center;
             padding: 20px;
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: #7f8c8d;
-            margin-top: 50px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ENCABEZADO CON TEXTOS Y FONDO -->
+    <!-- ENCABEZADO -->
     <header>
         <h1>Valeria Lopez</h1>
         <div class="subtitle">Analista GIS & Cartografía Ambiental</div>
@@ -179,13 +178,12 @@
         </p>
     </header>
 
-    <!-- CUERPO DE LA PÁGINA (PROYECTOS) -->
+    <!-- CUERPO DE LA PÁGINA -->
     <div class="container">
         <h2 class="section-title">Proyectos Destacados</h2>
         
-        <!-- TARJETA PROYECTO LANÚS -->
+        <!-- TARJETA 1 -->
         <div class="card">
-            <!-- CONTENEDOR DE LA IMAGEN DEL MAPA -->
             <div class="card-img-container">
                 <img src="lanus_mapa.PNG" alt="Mapa de espacios verdes en Lanús" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80'">
             </div>
@@ -199,7 +197,7 @@
                         <span class="tag">Isócronas Peatonales</span>
                         <span class="tag">Análisis Espacial</span>
                     </div>
-                    <p>Análisis de equidad ambiental urbana en Lanús mediante un visor espacial interactivo. A través del cálculo de isócronas de caminata (10 min), se evaluó el acceso peatonal a plazas y parques, identificando áreas con déficit verde y priorizando sitios candidatos para nuevas coberturas.</p>
+                    <p>Análisis de equidad ambiental urbana en Lanús mediante un visor espacial interactivo. Evaluación de acceso peatonal (isócronas de 10 min) para identificar áreas con déficit verde.</p>
                 </div>
                 <a href="https://lvaleria-gh.github.io/lanus_espacios_verdes/" target="_blank" class="btn">Abrir Mapa Interactivo 🗺️</a>
             </div>
